@@ -11,8 +11,10 @@ class App extends React.Component {
     filteredData: null
   }
   sortByName= () => {
+
+  
     this.setState({
-      data: data.sort( (a , b) => {
+      data: (this.state.filteredData || this.state.data).sort( (a , b) => {
         if (a.name < b.name) {
           return -1;
         }
