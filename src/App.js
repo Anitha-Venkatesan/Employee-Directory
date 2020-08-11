@@ -7,9 +7,9 @@ import Search from "./components/Search";
 
 class App extends React.Component {
   state = {
-    data
+    data,
+    filteredData: null
   }
-
   sortByName= () => {
     this.setState({
       data: data.sort( (a , b) => {
@@ -22,14 +22,28 @@ class App extends React.Component {
         return 0;
       })
     });
-  }
-  
+  } 
+
+  onFilter = (searchTerm) => {
+    if (searchTerm) {
+      this.setState({
+        filteredData: this.state.data.filter((employee) => {
+          return employee.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+        })
+      });
+    } else {
+      this.setState({
+        filteredData: null
+      });
+    }
+  };
+
 render() {
   return (
     <div>
       <Navbar />
-      <Search/>
-      <Employee data={this.state.data}
+      <Search onSubmit={this.onFilter}/>
+      <Employee data={this.state.filteredData || this.state.data}
       sortByName= {this.sortByName}
       />
     </div>

@@ -5,16 +5,17 @@ export default function Employee(props) {
         <table>
             <thead>
                 <tr>
-                 <th>Name</th>
+                 <th onClick = {() => props.sortByName("name")}>Name
+                 </th>
                  <th>Role</th>
                  <th>Email</th>
                  <th>Mobile</th>
                 </tr>
             </thead>
             <tbody>
-                {
+                {//map to loop through each item in the array
                     props.data.map(row  => (
-                        <tr>
+                        <tr key = {row.id}>
                             <td>
                                 {row.name}
                             </td>
