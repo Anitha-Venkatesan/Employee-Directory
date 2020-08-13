@@ -18,7 +18,7 @@ export default function Employee(props) {
                                 {props.sortOrder === 'asc' && <FontAwesomeIcon icon={faSortUp} />}
                                 {!props.sortOrder && <FontAwesomeIcon icon={faSort} />}
                             </th>
-                            <th>Role</th>
+                            <th >Role</th>
                             <th>Email</th>
                             <th>Mobile</th>
                         </tr>
