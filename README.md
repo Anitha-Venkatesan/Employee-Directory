@@ -36,8 +36,8 @@ Note: They already included in npm package.json
 ### Screenshots
 ![employee-directory](screenshot/demo.png)
 
-### Heroku Deployed URL
-Demo
+### Deployed URL
+[Demo](https://anitha-venkatesan.github.io/employee-directory/)
 
 ### License
 * This program is licensed under the MIT license.
