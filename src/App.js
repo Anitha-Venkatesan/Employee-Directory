@@ -15,7 +15,7 @@ class App extends React.Component {
     const currentSort = this.state.sortOrder === 'asc' ? 'desc' : 'asc';
 
     this.setState({
-      data: (this.state.filteredData || this.state.data).sort((a, b) => {
+      data: (this.state.filteredData || data).sort((a, b) => {
         let order;
         
         if (a.name < b.name) {
@@ -40,13 +40,14 @@ class App extends React.Component {
 onFilter = (searchTerm) => {
   if (searchTerm) {
     this.setState({
-      filteredData: this.state.data.filter((employee) => {
+      filteredData: data.filter((employee) => {
         return employee.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
       })
     });
   } else {
     this.setState({
-      filteredData: null
+      filteredData: null,
+      data
     });  
   }
 
