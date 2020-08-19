@@ -47,8 +47,9 @@ onFilter = (searchTerm) => {
   } else {
     this.setState({
       filteredData: null
-    });
+    });  
   }
+
 };
 
 render() {
